@@ -1,0 +1,191 @@
+//import 'dart:nativewrappers/_internal/vm/lib/mirrors_patch.dart';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: QuizApp(),
+    );
+  }
+}
+
+class QuizApp extends StatefulWidget {
+  const QuizApp({super.key});
+  @override
+  State createState() => _QuizAppState();
+}
+
+class _QuizAppState extends State {
+  List<Map> allQuestions = [
+    {
+      "question": "Who is the Founder of Microsoft?",
+      "options": ["Steve Jobs", "Bill Gates", "Lary Page", "Elon Musk"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Who is the Founder of Google?",
+      "options": ["Steve Jobs", "Bill Gates", "Lary Page", "Elon Musk"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Who is the Founder of SpaceX?",
+      "options": ["Steve Jobs", "Bill Gates", "Lary Page", "Elon Musk"],
+      "correctAnswer": 3
+    },
+    {
+      "question": "Who is the Founder of Apple?",
+      "options": ["Steve Jobs", "Bill Gates", "Lary Page", "Elon Musk"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who is the Founder of Meta?",
+      "options": ["Steve Jobs", "Mark Zukerberg", "Lary Page", "Elon Musk"],
+      "correctAnswer": 1
+    },
+  ];
+
+  int currentQuestionIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Quiz App",
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.w900,
+            color: Colors.orange,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+      ),
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [
+              const SizedBox(
+                width: 130,
+              ),
+              Text(
+                "Question : ${currentQuestionIndex + 1}/${allQuestions.length}",
+                style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          SizedBox(
+            width: 380,
+            height: 70,
+            child: Text(
+              allQuestions[currentQuestionIndex]["question"],
+              style: const TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w600,
+                color: Colors.purple,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 80,
+          ),
+          SizedBox(
+            height: 50,
+            width: 350,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                allQuestions[currentQuestionIndex]['options'][0],
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          SizedBox(
+            height: 50,
+            width: 350,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                allQuestions[currentQuestionIndex]['options'][0],
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          SizedBox(
+            height: 50,
+            width: 350,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                allQuestions[currentQuestionIndex]['options'][0],
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          SizedBox(
+            height: 50,
+            width: 350,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                allQuestions[currentQuestionIndex]['options'][0],
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (currentQuestionIndex < allQuestions.length - 1) {
+            currentQuestionIndex++;
+            setState(() {});
+          }
+        },
+        backgroundColor: Colors.blue,
+        child: const Icon(
+          Icons.forward,
+          color: Colors.orange,
+        ),
+      ),
+    );
+  }
+}
