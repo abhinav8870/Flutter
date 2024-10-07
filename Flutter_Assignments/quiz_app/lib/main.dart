@@ -129,7 +129,7 @@ class _QuizAppState extends State {
             child: ElevatedButton(
               onPressed: () {},
               child: Text(
-                allQuestions[currentQuestionIndex]['options'][0],
+                allQuestions[currentQuestionIndex]['options'][1],
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
@@ -146,7 +146,7 @@ class _QuizAppState extends State {
             child: ElevatedButton(
               onPressed: () {},
               child: Text(
-                allQuestions[currentQuestionIndex]['options'][0],
+                allQuestions[currentQuestionIndex]['options'][2],
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
@@ -163,7 +163,7 @@ class _QuizAppState extends State {
             child: ElevatedButton(
               onPressed: () {},
               child: Text(
-                allQuestions[currentQuestionIndex]['options'][0],
+                allQuestions[currentQuestionIndex]['options'][3],
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
