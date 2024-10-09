@@ -35,139 +35,140 @@ class _MyShopState extends State<MyShop> {
               SizedBox(
                 width: 280,
               ),
-              Icon(Icons.shopping_basket)
+              Icon(Icons.shopping_cart_outlined)
             ],
           ),
         ),
         body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 350,
-                  width: 500,
-                  child: Image.network(
-                    "https://app.vectary.com/website_assets/636cc9840038712edca597df/636cc9840038713d9aa59ac2_UV_hero.jpg",
-                    fit: BoxFit.fitHeight,
-                  ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 400,
+                width: 500,
+                child: Image.network(
+                  "https://app.vectary.com/website_assets/636cc9840038712edca597df/636cc9840038713d9aa59ac2_UV_hero.jpg",
+                  fit: BoxFit.fitHeight,
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  "Nike Air Force 1'07",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Row(
                   children: [
-                    ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor: WidgetStateProperty.all(
-                              const Color.fromARGB(255, 131, 24, 150))),
-                      onPressed: () {},
-                      child: const Center(
+                    Text(
+                      "Nike Air Force 1''07",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 40,
+                      width: 100,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 113, 27, 225),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
-                          "SHOES",
-                          textHeightBehavior: TextHeightBehavior(
-                              applyHeightToFirstAscent: true),
                           textAlign: TextAlign.center,
+                          "SHOES",
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
+                              color: Colors.white, fontWeight: FontWeight.w500),
                         ),
                       ),
                     ),
                     const SizedBox(
-                      width: 15,
+                      width: 10,
                     ),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor: WidgetStateProperty.all(
-                              const Color.fromARGB(255, 131, 24, 150))),
-                      onPressed: () {},
-                      child: const Center(
+                    Container(
+                      height: 40,
+                      width: 100,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 113, 27, 225),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
-                          "FOOTWEAR",
                           textAlign: TextAlign.center,
+                          "FOOTWEAR",
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
+                              color: Colors.white, fontWeight: FontWeight.w500),
                         ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text(
-                  "With iconic style and legendary comfort, the AF-1 was made to be worn on repeat. This iteration puts afresh spin on the hoopsclassic with crisp leather, era-echoing'80s construction and reflective-design Swoosh logos.",
-                  style: TextStyle(fontSize: 20),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                    "With iconic style and lengendary comfort,the AF-1 was madde to be worn on repeat. this iteration puts a fresh spin on the hoopsclasssic with crisp leather,eraechoing '80s construction and reflective-desgin Swoosh logos."),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
                   children: [
-                    const Text(
-                      "Quantity",
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                    const Text("Quantity"),
+                    const SizedBox(
+                      width: 5,
                     ),
-                    IconButton(
-                        onPressed: () {
-                          if (count >= 1) {
-                            count--;
-                            setState(() {});
-                          }
-                        },
-                        icon: const Icon(Icons.remove)),
+                    GestureDetector(
+                      child: const SizedBox(child: Icon(Icons.remove)),
+                      onTap: () {
+                        if (count != 0) {
+                          count--;
+                          setState(() {});
+                        }
+                      },
+                    ),
                     SizedBox(
-                      child: Text(
-                        "$count",
-                        style: TextStyle(fontSize: (30)),
-                      ),
+                      child: Text("$count"),
                     ),
-                    IconButton(
-                        onPressed: () {
-                          if (true) {
-                            count++;
-                            setState(() {});
-                          }
-                        },
-                        icon: const Icon(Icons.add)),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 40,
-                      width: 380,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: const Color.fromARGB(255, 131, 24, 150)),
-                      child: const Text(
-                        "Purchase",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white),
-                      ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    GestureDetector(
+                      child: const SizedBox(child: Icon(Icons.add)),
+                      onTap: () {
+                        count++;
+                        setState(() {});
+                      },
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 45,
+                  width: 400,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 113, 27, 225),
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      "PURCHASE",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ));
   }
